@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Rate converter
+        </title>
+        <link rel="stylesheet" href="mystyle.css">
+
+    </head>
+
+    <body>
+    <center>
+        <h2>Rate Converter</h2>
+
+        <p>Enter the amount of money you want to convert(TWD):</p>
+        <p><input type="text" id="amount"></p>
+        <button type="button" onclick="exit()">Reset</button>
+        <button type="button" onclick="checkInput(); loadDoc();">Calculate</button>
+        <br><br>
+        <table id="result"></table>
+        
+
+        <script>
+
+            function checkInput(){
+                const amount = document.getElementById("amount").value;
+                if(amount == ""){
+                    exit();
+                    alert("Please enter the amount of money you want to convert.");
+                }
+                else if(isNaN(amount)){
+                    exit();
+                    alert("Please only enter numbers.");
+                }
+                else if(amount < 0){
+                    exit();
+                    alert("Please enter a positive number.");
+                }
+            }
+
+            function exit(){
+                window.location.href='demo.html';
+            }
+
+            function loadDoc(){
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function(){
+                    myFunction(this);
+                }
+                xhttp.open("GET", "./rate.xml");
+                xhttp.send();
+            }
+
+            function myFunction(xml){
+                const xmlDoc = xml.responseXML;
+                const x = xmlDoc.getElementsByTagName("exchange");
+                const amount = document.getElementById("amount").value;
+                let table = "<tr><th>Currency</th><th>Rate</th><th>Result</th></tr>";
+                for (let i = 0; i < x.length; i++) {
+                    const currencies = x[i].getElementsByTagName("currency");
+                    const exrates = x[i].getElementsByTagName("exrate");
+                    for (let j = 0; j < currencies.length; j++) {
+                        table += "<tr><td>" +
+                        currencies[j].childNodes[0].nodeValue +
+                        "</td><td>" +
+                        exrates[j].childNodes[0].nodeValue +
+                        "</td><td>" +
+                        (amount / exrates[j].childNodes[0].nodeValue).toFixed(2) +
+                        "</td></tr>";
+                    }
+                }
+                document.getElementById("result").innerHTML = table;
+            }
+
+
+
+        </script>
+        
+    
+    </center>
+    </body>
+</html>

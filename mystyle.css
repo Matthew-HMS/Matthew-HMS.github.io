@@ -1,0 +1,20 @@
+body{
+    background: -webkit-linear-gradient(-10deg, rgb(255,255,255), rgb(158, 43, 215));
+    font-family: "Audiowide", sans-serif;
+}
+h1{
+    color: purple;
+}
+h2{
+    color: green;
+}
+
+
+table, th, td{
+    border : 2px solid black;
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 10px;
+}

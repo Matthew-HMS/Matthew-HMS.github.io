@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <rate>
+    <usd>30.95</usd>
+    <eur>33.44</eur>
+    <jpy>0.2218</jpy>
+    <krw>0.02533</krw>
+    <aud>20.43</aud>
+</rate> -->
+<exchange>
+    <rate>
+        <currency>USD(美金)</currency>
+        <exrate>30.95</exrate>
+    </rate>
+    <rate>
+        <currency>EUR(歐元)</currency>
+        <exrate>33.44</exrate>
+    </rate>
+    <rate>
+        <currency>JPY(日圓)</currency>
+        <exrate>0.2218</exrate>
+    </rate>
+    <rate>
+        <currency>KRW(韓元)</currency>
+        <exrate>0.02533</exrate>
+    </rate>
+    <rate>
+        <currency>AUD(澳幣)</currency>
+        <exrate>20.43</exrate>
+    </rate>
+</exchange>
+<!-- <rate>
+    <currency>USD(美金)</currency>
+    <exrate>30.95</exrate>
+</rate>
+<rate>
+    <currency>EUR(歐元)</currency>
+    <exrate>33.44</exrate>
+</rate>
+<rate>
+    <currency>JPY(日圓)</currency>
+    <exrate>0.2218</exrate>
+</rate>
+<rate>
+    <currency>KRW(韓元)</currency>
+    <exrate>0.02533</exrate>
+</rate>
+<rate>
+    <currency>AUD(澳幣)</currency>
+    <exrate>20.43</exrate>
+</rate> -->
