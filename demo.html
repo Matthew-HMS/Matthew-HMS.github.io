@@ -14,6 +14,7 @@
             <h1>Rate Converter</h1>
         </div>
 
+        <!-- step (1) -->
         <p class="prompt">Enter the amount of money you want to convert(TWD):</p>
         <p><input type="text" id="amount"></p>
         <button type="button" onclick="exit()">Reset</button>
@@ -24,6 +25,7 @@
 
         <script>
 
+            // step(5)
             function checkInput(){
                 const amount = document.getElementById("amount").value;
                 if(amount == ""){
@@ -40,6 +42,7 @@
                 }
             }
 
+            //step(4)
             function exit(){
                 window.location.href='demo.html';
             }
